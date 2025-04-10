@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produtos - Eros Sexshop - Luxo & Minimalismo</title>
+  <!-- Google Fonts para tipografia sofisticada -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="Pulse Logo.png" alt="Eros">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="nav-item">Home</a></li>
+          <li><a href="produtos.html" class="nav-item">Produtos</a></li>
+          <li><a href="sobre.html" class="nav-item">Sobre</a></li>
+          <li><a href="#" class="nav-item">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <span class="cart-item">Carrinho (0)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Página de Título -->
+  <section class="page-title">
+    <div class="container">
+      <h1>Produtos</h1>
+      <p>Explore nossa coleção exclusiva com design luxuoso e minimalista.</p>
+    </div>
+  </section>
+
+  <!-- Área de Busca e Filtros -->
+  <section class="product-filters">
+    <div class="container">
+      <input type="text" id="product-search" placeholder="Buscar produtos..." />
+      <div class="filter-buttons">
+        <button class="filter-btn active-filter" data-category="todos">Todos</button>
+        <button class="filter-btn" data-category="novo">Novo</button>
+        <button class="filter-btn" data-category="mais-vendidos">Mais Vendidos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listagem de Produtos -->
+  <section class="product-listing">
+    <div class="container">
+      <div class="featured-product-grid">
+        <!-- Produto 1: Label MAIS VENDIDOS -->
+        <div class="product-card" data-category="mais-vendidos">
+          <div class="product-card-header">
+            <span class="product-label">MAIS VENDIDOS</span>
+            <span class="product-stock-label">LOW STOCK</span>
+          </div>
+          <img src="Produto.webp" alt="Soraya Wave" class="product-image">
+          <h3 class="product-name">Soraya Wave™</h3>
+          <p class="product-type">Vibradores Rabbit</p>
+          <p class="product-price">BRL 1.669</p>
+          <button class="quick-view-btn">Visualização Rápida</button>
+        </div>
+        <!-- Produto 2: Label NOVO -->
+        <div class="product-card" data-category="novo">
+          <div class="product-card-header">
+            <span class="product-label">NOVO</span>
+          </div>
+          <img src="Produtos2.webp" alt="TOR 3" class="product-image">
+          <h3 class="product-name">TOR™ 3</h3>
+          <p class="product-type">Anéis Penianos</p>
+          <p class="product-price">BRL 919</p>
+          <button class="quick-view-btn">Visualização Rápida</button>
+        </div>
+        <!-- Produto 3: Label NOVO -->
+        <div class="product-card" data-category="novo">
+          <div class="product-card-header">
+            <span class="product-label">NOVO</span>
+          </div>
+          <img src="Produtos3.webp" alt="F1S V3" class="product-image">
+          <h3 class="product-name">F1S™ V3</h3>
+          <p class="product-type">Masturbações Masculinas</p>
+          <p class="product-price">BRL 1.219</p>
+          <button class="quick-view-btn">Visualização Rápida</button>
+        </div>
+        <!-- Produto 4: Label NOVO -->
+        <div class="product-card" data-category="novo">
+          <div class="product-card-header">
+            <span class="product-label">NOVO</span>
+          </div>
+          <img src="Produtos4.webp" alt="Enigma Double Sonic" class="product-image">
+          <h3 class="product-name">ENIGMA™ Double Sonic</h3>
+          <p class="product-type">Vibradores do Ponto G</p>
+          <p class="product-price">BRL 2.099</p>
+          <button class="quick-view-btn">Visualização Rápida</button>
+        </div>
+        <!-- Adicione mais produtos conforme necessário -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <img src="Pulse Logo.png" alt="Eros">
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="index.html" class="footer-item">Home</a></li>
+          <li><a href="produtos.html" class="footer-item">Produtos</a></li>
+          <li><a href="sobre.html" class="footer-item">Sobre</a></li>
+          <li><a href="#" class="footer-item">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="footer-item">Facebook</a>
+        <a href="#" class="footer-item">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Eros Sexshop. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Script específico para busca e filtros -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const productSearch = document.getElementById('product-search');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const productCards = document.querySelectorAll('.featured-product-grid .product-card');
+
+      // Busca por nome do produto
+      if(productSearch){
+        productSearch.addEventListener('input', function() {
+          const query = this.value.toLowerCase();
+          productCards.forEach(card => {
+            const name = card.querySelector('.product-name').textContent.toLowerCase();
+            if(name.indexOf(query) > -1) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // Filtro por categoria
+      if(filterButtons) {
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            filterButtons.forEach(b => b.classList.remove('active-filter'));
+            this.classList.add('active-filter');
+            productCards.forEach(card => {
+              if(category === 'todos' || card.getAttribute('data-category') === category) {
+                card.style.display = '';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

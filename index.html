@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pulse</title>
+  <!-- Google Fonts para tipografia sofisticada -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="Pulse Logo.png" alt="Eros">
+      </div>
+      <!-- Botão de menu mobile (hamburger) -->
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="footer-item">Home</a></li>
+          <li><a href="produtos.html" class="footer-item">Produtos</a></li>
+          <li><a href="sobre.html" class="footer-item">Sobre</a></li>
+          <li><a href="#" class="footer-item">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <span class="cart-item">Carrinho (0)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slider (Banner principal) -->
+  <section class="slider">
+    <div class="slide">
+      <img src="Banner.jpg" alt="Banner">
+      <div class="caption">
+        <h2>Coleção Íntima Suprema</h2>
+        <p>Desperte o desejo com nossa coleção exclusiva</p>
+        <a href="Produtos.html" class="btn">Ver Produtos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos em Destaque (cards luxuosos) -->
+  <section class="featured-products">
+    <h2>Produtos em Destaque</h2>
+    <div class="featured-product-grid">
+      <!-- Card 1 -->
+      <div class="product-card" data-category="mais-vendidos">
+        <div class="product-card-header">
+          <span class="product-label">MAIS VENDIDOS</span>
+          <span class="product-stock-label">LOW STOCK</span>
+        </div>
+        <img src="Produto.webp" alt="Soraya Wave" class="product-image">
+        <h3 class="product-name">Soraya Wave™</h3>
+        <p class="product-type">Vibradores Rabbit</p>
+        <p class="product-price">BRL 1.669</p>
+        <button class="quick-view-btn">Visualização Rápida</button>
+      </div>
+      <!-- Card 2 -->
+      <div class="product-card" data-category="novo">
+        <div class="product-card-header">
+          <span class="product-label">NOVO</span>
+        </div>
+        <img src="Produtos2.webp" alt="TOR 3" class="product-image">
+        <h3 class="product-name">TOR™ 3</h3>
+        <p class="product-type">Anéis Penianos</p>
+        <p class="product-price">BRL 919</p>
+        <button class="quick-view-btn">Visualização Rápida</button>
+      </div>
+      <!-- Card 3 -->
+      <div class="product-card" data-category="novo">
+        <div class="product-card-header">
+          <span class="product-label">NOVO</span>
+        </div>
+        <img src="Produtos3.webp" alt="F1S V3" class="product-image">
+        <h3 class="product-name">F1S™ V3</h3>
+        <p class="product-type">Masturbações Masculinas</p>
+        <p class="product-price">BRL 1.219</p>
+        <button class="quick-view-btn">Visualização Rápida</button>
+      </div>
+      <!-- Card 4 -->
+      <div class="product-card" data-category="novo">
+        <div class="product-card-header">
+          <span class="product-label">NOVO</span>
+        </div>
+        <img src="Produtos4.webp" alt="Enigma Double Sonic" class="product-image">
+        <h3 class="product-name">ENIGMA™ Double Sonic</h3>
+        <p class="product-type">Vibradores do Ponto G</p>
+        <p class="product-price">BRL 2.099</p>
+        <button class="quick-view-btn">Visualização Rápida</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Promocional (entre Produtos em Destaque e Quiz) -->
+  <section class="promo-banner">
+    <div class="promo-banner-content">
+      <h2>Faça o Prazer Durar Mais</h2>
+      <p>Aproveite promoções especiais em vibradores, géis e muito mais!</p>
+      <a href="Produtos.html" class="btn">Comprar Agora</a>
+    </div>
+  </section>
+
+  <!-- QUIZ: Tela de Introdução -->
+  <section class="quiz-intro">
+    <div class="quiz-image">
+      <img src="Quiz.jpg" alt="Imagem de destaque para o quiz">
+    </div>
+    <div class="quiz-info">
+      <h1>QUIZ SEX TOYS</h1>
+      <p class="quiz-subtitle">Não sabe ao certo qual sex toy é ideal para você?</p>
+      <p class="quiz-description">
+        Responda a algumas perguntas rápidas e descubra a solução perfeita para o seu prazer.
+      </p>
+      <button class="btn quiz-start-btn">Começar</button>
+    </div>
+  </section>
+
+  <!-- QUIZ: Slideshow de Perguntas (inicialmente escondido) -->
+  <section class="quiz" id="quiz-slideshow" style="display: none;">
+    <div class="quiz-slideshow">
+      <!-- Slide 1: Pergunta -->
+      <div class="quiz-slide active">
+        <p class="quiz-question">
+          Você prefere estímulo vibratório ou estímulo manual?
+        </p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-question="estilo" data-value="vibratorio">
+            <p>Estímulo Vibratório</p>
+          </div>
+          <div class="quiz-option" data-question="estilo" data-value="manual">
+            <p>Estímulo Manual</p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2: Pergunta -->
+      <div class="quiz-slide">
+        <p class="quiz-question">
+          Para qual situação você está procurando um produto?
+        </p>
+        <div class="quiz-options">
+          <div class="quiz-option" data-question="uso" data-value="solo">
+            <p>Uso Solo</p>
+          </div>
+          <div class="quiz-option" data-question="uso" data-value="casal">
+            <p>Para Casais</p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3: Resultado -->
+      <div class="quiz-slide" id="quiz-result-slide">
+        <!-- O resultado do quiz será inserido aqui via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos Recentes (estilo cards com overlay) -->
+  <section class="recent-articles">
+    <h2>Artigos Recentes</h2>
+    <div class="articles-grid">
+      <!-- Card 1 -->
+      <div class="article-card" style="background-image: url('Produto.webp');">
+        <div class="article-overlay">
+          <span class="article-badge">BUNDLE</span>
+          <h3>RIDE SOLO</h3>
+          <p>ENIGMA Wave™, Clitoral Arousal Serum, Nipple Play Gel, Personal Moisturizer</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="article-card" style="background-image: url('Produtos3.webp');">
+        <div class="article-overlay">
+          <span class="article-badge">BUNDLE</span>
+          <h3>PARTY IN THE BACK</h3>
+          <p>HUGO™, LOKI Wave™, HEX™ Original, Personal Moisturizer</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="article-card" style="background-image: url('Produtos2.webp');">
+        <div class="article-overlay">
+          <span class="article-badge">BUNDLE</span>
+          <h3>SPOTLIGHT</h3>
+          <p>SILA™, GIGI™ 2, Flickering Touch Massage Candle, Personal Moisturizer</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="article-card" style="background-image: url('Produtos4.webp');">
+        <div class="article-overlay">
+          <span class="article-badge">BUNDLE</span>
+          <h3>OPERATION ALLGASM</h3>
+          <p>SORAYA Wave™, SONA™ 2 Cruise, Flickering Touch Massage Candle, Personal Moisturizer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <img src="Pulse Logo.png" alt="Eros">
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="index.html" class="footer-item">Home</a></li>
+          <li><a href="produtos.html" class="footer-item">Produtos</a></li>
+          <li><a href="sobre.html" class="footer-item">Sobre</a></li>
+          <li><a href="#" class="footer-item">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="footer-item">Facebook</a>
+        <a href="#" class="footer-item">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Eros Sexshop. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
